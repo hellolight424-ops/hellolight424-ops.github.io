@@ -25,10 +25,9 @@ a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-.topbar .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* ruimte tussen logo en tekst */
+.topbar .logo img {
+  height: 40px;  /* past mooi bij de shopnaam */
+  width: auto;
 }
 
 .topbar .logo img {
