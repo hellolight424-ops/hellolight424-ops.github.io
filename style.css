@@ -25,14 +25,14 @@ a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-.topbar .logo img {
-  height: 40px;  /* past mooi bij de shopnaam */
-  width: auto;
-   size: 20px
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* ruimte tussen logo en tekst */
 }
 
 .topbar .logo img {
-  height: 40px;
+  height: 40px; /* pas aan naar wens */
   width: auto;
 }
 
@@ -56,6 +56,15 @@ a {
 .topbar .login:hover {
   background-color: #9a63d8;
 }
+
+/* Mobiel: logo + titel boven login knop */
+@media(max-width:768px){
+  .topbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 
 /* =======================
    LAYOUT
