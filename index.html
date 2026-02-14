@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-  <title>Mijn website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mijn Website</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #4f46e5, #06b6d4);
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(0,0,0,0.2);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  max-width: 500px;
+  font-size: 1.2rem;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #4f46e5;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  background: white;
+  color: #333;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+</style>
 </head>
+
 <body>
-  <h1>Welkom!</h1>
-  <p>Mijn site werkt 🎉</p>
+
+<nav>
+  <h2>MijnSite</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#over">Over mij</a>
+    <a href="#diensten">Diensten</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Welkom op mijn website</h1>
+  <p>Ik maak websites en leer programmeren. Dit is mijn persoonlijke website.</p>
+  <button>Neem contact op</button>
+</div>
+
+<section id="over">
+  <h2>Over mij</h2>
+  <p>Ik ben een beginnende webdeveloper en ik bouw mooie websites met HTML & CSS.</p>
+</section>
+
+<section id="diensten">
+  <h2>Wat ik doe</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Webdesign</h3>
+      <p>Moderne en responsive websites.</p>
+    </div>
+    <div class="card">
+      <h3>Programmeren</h3>
+      <p>HTML, CSS en JavaScript.</p>
+    </div>
+    <div class="card">
+      <h3>Onderhoud</h3>
+      <p>Ik help met updates en verbeteringen.</p>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
