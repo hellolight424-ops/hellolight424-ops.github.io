@@ -36,18 +36,20 @@ body {
   background-color: #9a63d8;
 }
 
-/* Layout */
+/* Layout met sidebar links en producten rechts bovenaan */
 .layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 220px 1fr; /* sidebar + content */
+  grid-template-rows: 1fr; /* hele content hoogte */
   min-height: calc(100vh - 64px);
 }
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
   background-color: #1f1f1f;
   padding: 2rem 1rem;
   box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  height: 100%;
 }
 
 .sidebar h3 {
@@ -82,23 +84,19 @@ body {
 
 /* Content */
 .content {
-  flex: 1;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.content h2 {
-  margin-top: 0;
-  color: #bb86fc;
-}
-
-/* Product cards */
+/* Product grid rechts van sidebar */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
+/* Product cards */
 .product {
   background-color: #1f1f1f;
   border-radius: 10px;
@@ -131,35 +129,4 @@ body {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
-  background-color: #03dac6;
-  color: #121212;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.product button:hover {
-  background-color: #00bfa5;
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .layout {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-  }
-  .sidebar ul {
-    display: flex;
-    gap: 0.5rem;
-  }
-  .sidebar ul li {
-    margin-bottom: 0;
-  }
-  .products {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-}
+  bac
