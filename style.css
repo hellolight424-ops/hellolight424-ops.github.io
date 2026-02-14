@@ -3,6 +3,10 @@
   font-family: Arial, sans-serif;
 }
 
+.hidden{
+  display:none;
+}
+
 body {
   margin: 0;
   background: #0e0e0e;
