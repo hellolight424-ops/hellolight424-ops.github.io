@@ -1,4 +1,6 @@
-/* Algemeen */
+/* =======================
+   ALGEMEEN
+======================= */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,7 +8,14 @@ body {
   color: #e0e0e0;
 }
 
-/* Topbar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =======================
+   TOPBAR
+======================= */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -16,9 +25,21 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-.topbar h1 {
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* ruimte tussen logo en tekst */
+}
+
+.topbar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+.topbar .logo h1 {
   margin: 0;
   font-size: 1.5rem;
+  color: #bb86fc;
 }
 
 .topbar .login {
@@ -36,15 +57,18 @@ body {
   background-color: #9a63d8;
 }
 
-/* Layout met sidebar links en producten rechts bovenaan */
+/* =======================
+   LAYOUT
+======================= */
 .layout {
   display: grid;
   grid-template-columns: 220px 1fr; /* sidebar + content */
-  grid-template-rows: 1fr; /* hele content hoogte */
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px); /* minus topbar */
 }
 
-/* Sidebar */
+/* =======================
+   SIDEBAR
+======================= */
 .sidebar {
   background-color: #1f1f1f;
   padding: 2rem 1rem;
@@ -82,21 +106,30 @@ body {
   color: #121212;
 }
 
-/* Content */
+/* =======================
+   CONTENT
+======================= */
 .content {
   padding: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-/* Product grid rechts van sidebar */
+.content h2 {
+  color: #bb86fc;
+  margin-top: 0;
+}
+
+/* =======================
+   PRODUCT GRID
+======================= */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 
-/* Product cards */
+/* PRODUCT CARD */
 .product {
   background-color: #1f1f1f;
   border-radius: 10px;
@@ -129,4 +162,49 @@ body {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
-  bac
+  background-color: #03dac6;
+  color: #121212;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.product button:hover {
+  background-color: #00bfa5;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media(max-width:768px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    box-shadow: none;
+    padding: 1rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 0;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
